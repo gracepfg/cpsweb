@@ -77,7 +77,7 @@
 		
 			<hr/>
 		<div style="text-align:center">
-			By <a href="https://github.com/gracepfg" target="_blank">Chatchanok.W</a>
+			By <a href="https://github.com/gracepfg" target="_blank">Chatchanok & Nattamon</a>
 			<br/>
 			<a href="https://cie.kmitl.ac.th/" target="_blank">CIE KMITL</a>
 		</div>
@@ -135,7 +135,7 @@
 		function controlFan(){
 			var fake = Math.floor(20+Math.random()*10);
 			message = new Paho.MQTT.Message("1");
-			message.destinationName = "kmitl/cie/g55/fan";
+			message.destinationName = "kmitl/cie/g10/buzzer";
 			client.send(message);
 		}
 	</script>
