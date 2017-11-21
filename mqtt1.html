@@ -56,7 +56,7 @@
 					<h3 class="panel-title">Status</h3>
 				  </div>
 				  <div class="panel-body">
-					<span id="temp" class="mqtt-value">-</span>
+					<span id="status" class="mqtt-value">-</span>
 				  </div>
 				</div>
 			</div>
@@ -121,7 +121,7 @@
 		function onMessageArrived(message) {
 		  console.log("onMessageArrived:"+message.payloadString);
 		  switch(message.destinationName){
-			case "kmitl/cie/g0/home": $("#temp").html(message.payloadString); break;
+			case "kmitl/cie/g0/home": $("#status").html(message.payloadString); break;
 			
 		  }
 		  
