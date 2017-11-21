@@ -121,7 +121,7 @@
 		function onMessageArrived(message) {
 		  console.log("onMessageArrived:"+message.payloadString);
 		  switch(message.destinationName){
-			case "kmitl/cie/g0/temp": $("#temp").html(message.payloadString); break;
+			case "kmitl/cie/g0/home": $("#temp").html(message.payloadString); break;
 			case "kmitl/cie/g2/temp": $("#g2").html(message.payloadString); break;
 			case "kmitl/cie/random/x1": $("#x1").html(message.payloadString); break;
 			case "kmitl/cie/random/x2": $("#x2").html(message.payloadString); break;
@@ -135,7 +135,7 @@
 		function controlFan(){
 			var fake = Math.floor(20+Math.random()*10);
 			message = new Paho.MQTT.Message("1");
-			message.destinationName = "kmitl/cie/g10/buzzer";
+			message.destinationName = "kmitl/cie/g10/fan";
 			client.send(message);
 		}
 	</script>
