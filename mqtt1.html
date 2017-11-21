@@ -122,9 +122,7 @@
 		  console.log("onMessageArrived:"+message.payloadString);
 		  switch(message.destinationName){
 			case "kmitl/cie/g0/home": $("#temp").html(message.payloadString); break;
-			case "kmitl/cie/g2/temp": $("#g2").html(message.payloadString); break;
-			case "kmitl/cie/random/x1": $("#x1").html(message.payloadString); break;
-			case "kmitl/cie/random/x2": $("#x2").html(message.payloadString); break;
+			
 		  }
 		  
 		}
