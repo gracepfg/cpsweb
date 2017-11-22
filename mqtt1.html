@@ -104,7 +104,7 @@
 		function onConnect() {
 		  // Once a connection has been made, make a subscription and send a message.
 		  console.log("onConnect");
-		  client.subscribe("kmitl/cie/#");
+		  client.subscribe("kmitl/cie/g0/#");
 		  message = new Paho.MQTT.Message("Hello");
 		  message.destinationName = "World";
 		  client.send(message);
@@ -121,7 +121,7 @@
 		function onMessageArrived(message) {
 		  console.log("onMessageArrived:"+message.payloadString);
 		  switch(message.destinationName){
-			case "kmitl/cie/g0/home": $("#status").html(message.payloadString); break;
+			case "kmitl/cie/g0/temp": $("#status").html(message.payloadString); break;
 			
 		  }
 		  
@@ -133,7 +133,7 @@
 		function controlFan(){
 			var fake = Math.floor(20+Math.random()*10);
 			message = new Paho.MQTT.Message("1");
-			message.destinationName = "kmitl/cie/g10/fan";
+			message.destinationName = "kmitl/cie/g0/fan";
 			client.send(message);
 		}
 	</script>
